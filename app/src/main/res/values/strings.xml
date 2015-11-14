@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Lab2</string>
+    <string name="home_value">Home Value</string>
+    <string name="down_payment">Down Payment</string>
+    <string name="interest_rate">Interest Rate</string>
+    <string name="property_tax_rate">Property Tax Rate</string>
+    <string name="reset">Reset</string>
+    <string name="calculate">Calculate</string>
+    <string-array name="terms_array">
+        <item>Terms</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>40</item>
+    </string-array>
 </resources>
