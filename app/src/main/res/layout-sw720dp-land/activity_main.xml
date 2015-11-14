@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:name="com.group5.lab2.FormFragment"
+        android:id="@+id/fragment"
+        android:layout_weight=".5"
+        tools:layout="@layout/fragment_form" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"/>
+
+    <fragment
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:name="com.group5.lab2.ResultsFragment"
+        android:id="@+id/fragment2"
+        android:layout_weight=".5"
+        tools:layout="@layout/fragment_results" />
+
+</LinearLayout>
