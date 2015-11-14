@@ -1,6 +1,8 @@
 package com.group5.lab2;
 
-import android.app.Fragment;
+import android.app.Activity;
+import android.support.v4.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,12 @@ public class FormFragment extends Fragment {
     private EditText interestRateInput;
     private EditText propertyTaxRateInput;
     private Spinner termsSpinner;
+
+    private OnCalculateClickedListener mCallback;
+
+    public interface OnCalculateClickedListener {
+        void onCalculateClicked();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,8 +61,33 @@ public class FormFragment extends Fragment {
         return view;
     }
 
-    private void calculate() {
+//    @SuppressWarnings("deprecation")
+//    @Override
+//    public void onAttach(Activity a) {
+//        super.onAttach(a);
+//
+//        try {
+//            mCallback = (OnCalculateClickedListener) a;
+//        } catch (ClassCastException e) {
+//            throw new ClassCastException(a.toString() + " must implement OnCalculateClickedListener");
+//        }
+//    }
 
+    @Override
+    public void onAttach(Context c) {
+        super.onAttach(c);
+
+        Activity a = (Activity) c;
+
+        try {
+            mCallback = (OnCalculateClickedListener) a;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(a.toString() + " must implement OnCalculateClickedListener");
+        }
+    }
+
+    private void calculate() {
+        mCallback.onCalculateClicked();
     }
 
     private void reset() {
