@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
+import java.util.Date;
+
 public class FormFragment extends Fragment {
 
     private EditText homeValueInput;
@@ -24,6 +26,7 @@ public class FormFragment extends Fragment {
     private OnCalculateClickedListener mCallback;
 
     public interface OnCalculateClickedListener {
+//        void onCalculateClicked(double monthly, double interest, double property, Date date);
         void onCalculateClicked();
     }
 
@@ -76,6 +79,8 @@ public class FormFragment extends Fragment {
     }
 
     private void calculate() {
+        // Do calculations here and pass as args into onCalculateClicked()
+        // Uncomment the method in the interface with args and delete the other.
         mCallback.onCalculateClicked();
     }
 

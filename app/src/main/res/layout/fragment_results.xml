@@ -18,10 +18,12 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
                 android:id="@+id/input_monthly_payment_amount"
                 android:hint="@string/monthly_payment_amount"
-                android:editable="false" />
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -33,7 +35,10 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/input_total_interest_paid"
                 android:hint="@string/total_interest_paid"
-                android:editable="false"/>
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -45,7 +50,10 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/input_total_property_tax_paid"
                 android:hint="@string/total_property_tax_paid"
-                android:editable="false"/>
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -57,7 +65,10 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/input_pay_off_date"
                 android:hint="@string/pay_off_date"
-                android:editable="false"/>
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 </ScrollView>

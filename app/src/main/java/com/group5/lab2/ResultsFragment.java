@@ -23,6 +23,17 @@ public class ResultsFragment extends Fragment {
         totalPropertyInput = (EditText) view.findViewById(R.id.input_total_property_tax_paid);
         payOffDateInput = (EditText) view.findViewById(R.id.input_pay_off_date);
 
+        // Check if using layout for small screens
+        // Not sure if necessary
+        if (container.findViewById(R.id.fragment_container) != null) {
+            // Retrieve data from Bundle passed in when onCalculateClicked() ran
+            Bundle bundle = getArguments();
+            if (bundle != null) {
+                // Get the data here and set them to corresponding inputs
+                
+            }
+        }
+
         return view;
     }
 

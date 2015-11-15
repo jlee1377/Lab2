@@ -37,12 +37,18 @@ public class MainActivity extends AppCompatActivity implements FormFragment.OnCa
 
         ResultsFragment resultsFrag = (ResultsFragment) getSupportFragmentManager().findFragmentById(R.id.fragment2);
 
+        // Small screens will not have both fragments shown
         if (resultsFrag == null) {
+            // Replace form fragment with results fragment
             ResultsFragment newResultsFrag = new ResultsFragment();
             Bundle args = new Bundle();
+
+            // Store arguments in args to pass into fragment
+            // args.put...
             newResultsFrag.setArguments(args);
 
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             transaction.replace(R.id.fragment_container, newResultsFrag);
             transaction.addToBackStack(null);
             transaction.commit();
