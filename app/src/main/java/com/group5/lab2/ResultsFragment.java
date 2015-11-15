@@ -1,6 +1,6 @@
 package com.group5.lab2;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +18,7 @@ public class ResultsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_results, container, false);
 
-        monthlyPaymentInput = (EditText) view.findViewById(R.id.input_montly_payment_amount);
+        monthlyPaymentInput = (EditText) view.findViewById(R.id.input_monthly_payment_amount);
         totalInterestInput = (EditText) view.findViewById(R.id.input_total_interest_paid);
         totalPropertyInput = (EditText) view.findViewById(R.id.input_total_property_tax_paid);
         payOffDateInput = (EditText) view.findViewById(R.id.input_pay_off_date);

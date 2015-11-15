@@ -8,7 +8,8 @@
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp">
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -18,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:id="@+id/input_montly_payment_amount"
+                android:id="@+id/input_monthly_payment_amount"
                 android:hint="@string/monthly_payment_amount"
                 android:editable="false" />
         </android.support.design.widget.TextInputLayout>
