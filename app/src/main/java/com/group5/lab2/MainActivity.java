@@ -1,10 +1,21 @@
 package com.group5.lab2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+enum MONTHS
+{
+    January, February, March, April, May, June, July, August, Septempber, October, November, December;
+}
 public class MainActivity extends AppCompatActivity {
+    GregorianCalendar cal;
+    MONTHS[] arrayOfMonths;
+
     //Values Inputted
     private Double homeValue;
     private Double downPayment;
@@ -17,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Double principalAmt;
     private Double interestRate;
     private Integer numPayments;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,10 +88,32 @@ public class MainActivity extends AppCompatActivity {
         return MonthlyPayment;
     }
 
-    private String payOffDate(){
+    /**
+     * Sets date to be printed
+     * @return date string of month and year
+     */
+    private String payOffDate() {
         String date = "";
+        cal = new GregorianCalendar();
+        arrayOfMonths = MONTHS.values();
 
+        cal.add(Calendar.MONTH, terms);
+
+        date = "" + arrayOfMonths[cal.get(Calendar.MONTH)] + " " +
+                    cal.get(Calendar.YEAR);
 
         return date;
+    }
+
+    public void onCalculateClicked() {
+        System.out.println("test");
+        ResultsFragment resultsFrag = (ResultsFragment) getFragmentManager().findFragmentById(R.id.fragment2);
+
+        if (resultsFrag == null) {
+            Intent intent = new Intent(this, ResultsActivity.class);
+            startActivity(intent);
+        } else {
+            resultsFrag.showResults();
+        }
     }
 }

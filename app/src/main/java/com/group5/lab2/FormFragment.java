@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 public class FormFragment extends Fragment {
@@ -50,7 +51,7 @@ public class FormFragment extends Fragment {
             }
         });
 
-        Button resetBtn = (Button) view.findViewById(R.id.btn_reset);
+        ImageButton resetBtn = (ImageButton) view.findViewById(R.id.btn_reset);
         resetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,18 +61,6 @@ public class FormFragment extends Fragment {
 
         return view;
     }
-
-//    @SuppressWarnings("deprecation")
-//    @Override
-//    public void onAttach(Activity a) {
-//        super.onAttach(a);
-//
-//        try {
-//            mCallback = (OnCalculateClickedListener) a;
-//        } catch (ClassCastException e) {
-//            throw new ClassCastException(a.toString() + " must implement OnCalculateClickedListener");
-//        }
-//    }
 
     @Override
     public void onAttach(Context c) {
