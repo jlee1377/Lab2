@@ -18,4 +18,5 @@
     <string name="total_interest_paid">Total interest paid</string>
     <string name="total_property_tax_paid">Total property tax paid</string>
     <string name="pay_off_date">Pay off date</string>
+    <string name="error_field_required">Field Required</string>
 </resources>
