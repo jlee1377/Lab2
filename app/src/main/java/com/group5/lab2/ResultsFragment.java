@@ -29,15 +29,17 @@ public class ResultsFragment extends Fragment {
             // Retrieve data from Bundle passed in when onCalculateClicked() ran
             Bundle bundle = getArguments();
             if (bundle != null) {
-                // Get the data here and set them to corresponding inputs
-                
+                // Get the data here and call showResults()
+
             }
         }
 
         return view;
     }
 
+    // Edit to take appropriate arguments
     public void showResults() {
+        // Set data to corresponding inputs
         System.out.println("hi");
     }
 }

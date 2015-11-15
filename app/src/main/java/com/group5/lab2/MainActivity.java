@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements FormFragment.OnCa
             transaction.addToBackStack(null);
             transaction.commit();
         } else {
+            // Need to edit showResults to take in arguments
             resultsFrag.showResults();
         }
     }
