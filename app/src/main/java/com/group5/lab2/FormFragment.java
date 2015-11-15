@@ -1,6 +1,7 @@
 package com.group5.lab2;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.Date;
 
@@ -50,7 +52,9 @@ public class FormFragment extends Fragment {
         calculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calculate();
+                if (validateInputs()) {
+                    calculate();
+                }
             }
         });
 
@@ -79,9 +83,60 @@ public class FormFragment extends Fragment {
     }
 
     private void calculate() {
+        double homeValue = Double.parseDouble(homeValueInput.getText().toString());
+        double downPayment = Double.parseDouble(downPaymentInput.getText().toString());
+        double interestRate = Double.parseDouble(interestRateInput.getText().toString());
+        double propertyTax = Double.parseDouble(propertyTaxRateInput.getText().toString());
+        int terms = Integer.parseInt(termsSpinner.getSelectedItem().toString());
+
         // Do calculations here and pass as args into onCalculateClicked()
-        // Uncomment the method in the interface with args and delete the other.
+        // Uncomment the method in the interface with args and delete the other
         mCallback.onCalculateClicked();
+    }
+
+    private boolean validateInputs() {
+        homeValueInput.setError(null);
+        downPaymentInput.setError(null);
+        interestRateInput.setError(null);
+        propertyTaxRateInput.setError(null);
+
+        boolean error = false;
+        View focusView = null;
+
+        if (isEmpty(homeValueInput)) {
+            homeValueInput.setError(getString(R.string.error_field_required));
+            focusView = homeValueInput;
+            error = true;
+        } else if (isEmpty(downPaymentInput)) {
+            downPaymentInput.setError(getString(R.string.error_field_required));
+            focusView = downPaymentInput;
+            error = true;
+        } else if (isEmpty(interestRateInput)) {
+            interestRateInput.setError(getString(R.string.error_field_required));
+            focusView = interestRateInput;
+            error = true;
+        } else if (termsSpinner.getSelectedItemPosition() == 0) {
+            TextView errorText = (TextView) termsSpinner.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(Color.RED);
+            errorText.setText(R.string.error_field_required);
+            focusView = termsSpinner;
+            error = true;
+        } else if (isEmpty(propertyTaxRateInput)) {
+            propertyTaxRateInput.setError(getString(R.string.error_field_required));
+            focusView = propertyTaxRateInput;
+            error = true;
+        }
+
+        if (error) {
+            focusView.requestFocus();
+        }
+
+        return !error;
+    }
+
+    private boolean isEmpty(EditText et) {
+        return et.getText().toString().trim().length() == 0;
     }
 
     private void reset() {
