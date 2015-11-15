@@ -25,12 +25,14 @@ public class ResultsFragment extends Fragment {
 
         // Check if using layout for small screens
         // Not sure if necessary
-        if (container.findViewById(R.id.fragment_container) != null) {
-            // Retrieve data from Bundle passed in when onCalculateClicked() ran
-            Bundle bundle = getArguments();
-            if (bundle != null) {
-                // Get the data here and call showResults()
+        if (container != null) {
+            if (container.findViewById(R.id.fragment_container) != null) {
+                // Retrieve data from Bundle passed in when onCalculateClicked() ran
+                Bundle bundle = getArguments();
+                if (bundle != null) {
+                    // Get the data here and call showResults()
 
+                }
             }
         }
 

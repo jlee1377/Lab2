@@ -140,10 +140,10 @@ public class FormFragment extends Fragment {
     }
 
     private void reset() {
-        homeValueInput.setText("");
-        downPaymentInput.setText("");
-        interestRateInput.setText("");
-        propertyTaxRateInput.setText("");
+        homeValueInput.getText().clear();
+        downPaymentInput.getText().clear();
+        interestRateInput.getText().clear();
+        propertyTaxRateInput.getText().clear();
         termsSpinner.setSelection(0);
     }
 }
